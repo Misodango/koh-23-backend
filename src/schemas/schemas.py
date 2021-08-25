@@ -33,3 +33,11 @@ class UserModel(BaseModel):
     todos: List[TodoModel]
     class Config:
         orm_mode = True
+
+class MlData(BaseModel):
+    data: List[List]
+
+class MlResponse(BaseModel):
+    result: List
+    class Config:
+        orm_mode = True

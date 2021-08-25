@@ -1,3 +1,4 @@
+import json
 from typing import List, Optional
 from src import cruds
 
@@ -53,3 +54,10 @@ def show(email: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail='Todo not found')
     return {"email":email, "todos": json_data}
 
+@router.post('/ml', response_model=MlResponse)
+def ml(data: MlData):
+    json_data = cruds.ml.ml(data=data)
+    if not json_data:
+        raise HTTPException(status_code=405, detail='Todo not found')
+    print(json_data)
+    return json_data
