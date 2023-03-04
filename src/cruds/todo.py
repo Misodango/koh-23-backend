@@ -12,3 +12,19 @@ def create(db: Session, todo: TodoCreate):
   db.commit()
   db.refresh(new_todo)
   return new_todo
+
+def update(db: Session, todo: TodoUpdate):
+  update_todo = db.query(Todo).filter(Todo.id == todo.id)
+  update_todo.update(
+    {
+      Todo.text: todo.text
+    }
+  )
+  db.commit()
+  return update_todo
+
+def delete(db: Session, todo: TodoDelete):
+  delete_todo = db.query(Todo).filter(Todo.id == todo.id)
+  delete_todo.delete()
+  db.commit()
+  return delete_todo

@@ -18,10 +18,8 @@ host = os.environ.get('DB_HOST')
 database_name = os.environ.get('DB_NAME')
 
 DATABASE = f'mysql+mysqlconnector://{user_name}:{password}@{host}/{database_name}?charset=utf8'
-
 ENGINE = create_engine(
     DATABASE,
-    encoding='utf-8',
     echo=True
 )
 

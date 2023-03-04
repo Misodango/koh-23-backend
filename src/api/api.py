@@ -47,6 +47,20 @@ def create(todo: TodoCreate, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail='Todo not found')
     return {"message": "successed"}
 
+@router.post('/todo/update')
+def update(todo: TodoUpdate, db: Session = Depends(get_db)):
+    json_data = cruds.todo.update(db, todo=todo)
+    if not json_data:
+        raise HTTPException(status_code=404, detail='Todo not found')
+    return {"message": "successed"}
+
+@router.post('/todo/delete')
+def delete(todo: TodoDelete, db: Session = Depends(get_db)):
+    json_data = cruds.todo.delete(db, todo=todo)
+    if not json_data:
+        raise HTTPException(status_code=404, detail='Todo not found')
+    return {"message": "successed"}
+
 @router.get('/user/{email}', response_model=UserModel)
 def show(email: str, db: Session = Depends(get_db)):
     json_data = cruds.user.show(db, email=email)

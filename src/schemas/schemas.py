@@ -25,6 +25,13 @@ class TodoCreate(BaseModel):
     text: str
     owner_id: str
 
+class TodoUpdate(BaseModel):
+    id : int
+    text: str
+
+class TodoDelete(BaseModel):
+    id : int
+
 class ShowUser(BaseModel):
     id: int
 

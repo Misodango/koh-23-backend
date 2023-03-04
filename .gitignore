@@ -1,2 +1,3 @@
 db/migration/versions/__pycache__
 db/migration/versions/*.py
+.env
