@@ -1,2 +1,2 @@
-db/migrations/versions/__pycache__
-db/migrations/versions/*.py
+db/migration/versions/__pycache__
+db/migration/versions/*.py
