@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Any, Optional
 
 from pydantic import BaseModel
 
@@ -37,6 +37,12 @@ class UserModel(BaseModel):
     todos: List[TodoModel]
     class Config:
         orm_mode = True
+
+class MlFundamentalModel(BaseModel):
+    data: List[List[Any]]
+
+class MlFundamentalResponse(BaseModel):
+    results: List[float]
 
 class MlData(BaseModel):
     data: List[List]
