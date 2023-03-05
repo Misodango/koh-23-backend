@@ -23,8 +23,8 @@ def update(db: Session, todo: TodoUpdate):
   db.commit()
   return update_todo
 
-def delete(db: Session, todo: TodoDelete):
-  delete_todo = db.query(Todo).filter(Todo.id == todo.id)
+def delete(db: Session, target_id: int):
+  delete_todo = db.query(Todo).filter(Todo.id == target_id)
   delete_todo.delete()
   db.commit()
   return delete_todo

@@ -29,9 +29,6 @@ class TodoUpdate(BaseModel):
     id : int
     text: str
 
-class TodoDelete(BaseModel):
-    id : int
-
 class ShowUser(BaseModel):
     id: int
 
