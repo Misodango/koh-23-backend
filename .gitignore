@@ -2,6 +2,8 @@ db/migration/versions/__pycache__
 db/migration/versions/*.py
 .env
 
+models/*.pkl
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
