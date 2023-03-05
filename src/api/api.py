@@ -77,7 +77,6 @@ def ml(data: MlData):
     json_data = cruds.ml.ml(data=data)
     if not json_data:
         raise HTTPException(status_code=405, detail='Todo not found')
-    print(json_data)
     return json_data
 
 @router.post('/ml_fundamental', response_model=MlFundamentalResponse)
@@ -85,5 +84,4 @@ def ml(data: MlFundamentalModel):
     json_data = cruds.ml_fundamental.ml(data=data)
     if not json_data:
         raise HTTPException(status_code=405, detail='Appropriate Data is Not Provided')
-    print(json_data)
     return json_data
