@@ -26,3 +26,11 @@ class Todo(Base):
     owner_id = Column(String(128), ForeignKey("users.email"))
 
     owner = relationship("User", back_populates="items")
+
+class Cardset(Base):
+    __tablename__ = 'cardset'
+
+    id = Column(String(36), primary_key=True, nullable=False, unique=True)
+    name = Column(Text, nullable=False)
+    cards = Column(Text, nullable=False)
+

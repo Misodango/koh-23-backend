@@ -51,3 +51,18 @@ class MlResponse(BaseModel):
     result: List
     class Config:
         orm_mode = True
+
+class ICardset(BaseModel):
+    id : str
+    name : str
+    cards: str
+
+class CardsetCreateData(BaseModel):
+    sentences : List[str]
+    id : str
+    name : str
+    
+class PutCardset(BaseModel):
+    id : str
+    name : str
+    cards : List[Any]
